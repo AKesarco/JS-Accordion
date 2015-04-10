@@ -1,0 +1,23 @@
+$(document).ready(function () {
+    $('.accordion-toggle').on('click', function(event){
+    	event.preventDefault();
+    	// create accordion variables
+    	var accordion = $(this);
+    	var accordionContent = accordion.next('.accordion-content');
+    	var accordionToggleIcon = $(this).children('.toggle-icon');
+    	
+    	// toggle accordion link open class
+    	accordion.toggleClass("open");
+    	// toggle accordion content
+    	accordionContent.slideToggle(250);
+    	
+    	// change plus/minus icon
+    	if (accordion.hasClass("open")) {
+    	// If open, change to minus
+    		accordionToggleIcon.html("<img src='Images/minus-32.ico'/>");
+    	} else {
+    	// If closed, change/stay on plus
+    		accordionToggleIcon.html("<img src='Images/plus-32.ico'/>");
+    	}
+    });
+});
